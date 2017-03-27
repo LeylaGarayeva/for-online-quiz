@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+ <p id="time"></p>
+<input type="number" name="" id="one">
+<input type="number" name="" id="two">
+<input type="submit" name="" value="End" id="end">
+<p id="text"></p>
+
+<script type="text/javascript">
+var one=document.getElementById('one');
+var two=document.getElementById('two');
+
+	var i=30;
+var a = setInterval(function(){
+ 	i--;
+ 	if(i==0){
+ 			clearInterval(a);
+ 			document.getElementById("one").style.display = "none";
+    		document.getElementById("two").style.display = "none";
+    		document.getElementById("text").innerHTML = 'Vaxt sona catdi';
+ 	}
+ 	document.getElementById("time").innerHTML = i;
+}, 1000)
+
+document.getElementById("end").addEventListener("click", end_date);
+    function end_date(){
+    		if (one.value>0 && two.value>0){
+    		clearInterval(a);
+    		document.getElementById("time").innerHTML = i;
+    		document.getElementById("one").style.display = "none";
+    		document.getElementById("two").style.display = "none";
+    		document.getElementById("text").innerHTML = 'Tebrikler';
+    	}
+
+    			else{
+    				clearInterval(a);
+		    		document.getElementById("time").innerHTML = i;
+		    		document.getElementById("text").innerHTML = 'Bos xanalari doldurun';
+    			}
+    	}
+
+</script>
+</body>
+</html>
+
